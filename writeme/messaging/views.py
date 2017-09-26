@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .models import Message, Conversation
-from .forms import NewMessageForm
+from .forms import NewMessageForm, NewMessageHiddenUserForm
 
 class RecentMessagesListView(LoginRequiredMixin, ListView):
     template_name = "messaging/index.html"
@@ -53,9 +53,12 @@ class NewMessageView(LoginRequiredMixin, FormView):
         return super(NewMessageView, self).form_valid(form)
 
 
-class ConversationMessagesListView(ListView):
+class ConversationMessagesListView(NewMessageView):
     template_name = "messaging/conversation.html"
-    context_object_name = 'messages_list'
+    form_class = NewMessageHiddenUserForm
+
+    def get_success_url(self):
+        return reverse('messaging:conversation', args=(self.kwargs.get('username'),))
 
     def get_queryset(self):
         """
@@ -81,4 +84,5 @@ class ConversationMessagesListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ConversationMessagesListView, self).get_context_data(**kwargs)
         context['conversation_user'] = get_object_or_404(User, username=self.kwargs.get('username'))
+        context['messages_list'] = self.get_queryset()
         return context

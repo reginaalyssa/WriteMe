@@ -27,7 +27,8 @@ class NewMessageForm(forms.Form):
                 user2=user2
             )
             conversation.save()
-
+        print("Conversation is")
+        print(conversation)
         """
         Create new message between user1 and user2.
         """
@@ -37,3 +38,6 @@ class NewMessageForm(forms.Form):
             message=self.message
         )
         new_message.save()
+
+class NewMessageHiddenUserForm(NewMessageForm):
+    username = forms.CharField(widget=forms.HiddenInput())

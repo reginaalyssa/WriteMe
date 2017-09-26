@@ -13,4 +13,9 @@
     {% else %}
         <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
     {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send Message" /><br />
+    </form>
 {% endblock %}
