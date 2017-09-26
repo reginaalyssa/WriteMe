@@ -71,6 +71,7 @@ class ConversationMessagesListView(ListView):
                 (Q(user1=user2) & Q(user2=user1))
             )
         except Conversation.DoesNotExist:
+            print("Did not retrieve conversation.")
             return None
 
         # Retrieve all messages for the conversation, with most recent first.

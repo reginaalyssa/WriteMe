@@ -33,7 +33,7 @@ class NewMessageForm(forms.Form):
         """
         new_message = Message(
             conversation=conversation,
-            receiver=user2,
+            sender=user1,
             message=self.message
         )
         new_message.save()

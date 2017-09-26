@@ -5,6 +5,7 @@
     {% if messages_list %}
         {% for message in messages_list %}
             <p>
+                {{ message.sender }}
                 {{ message.timestamp }}
                 {{ message.message }}
             </p>

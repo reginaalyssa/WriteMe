@@ -7,7 +7,7 @@ class Conversation(models.Model):
 
 class Message(models.Model):
     conversation = models.ForeignKey(Conversation)
-    receiver = models.ForeignKey(User)
+    sender = models.ForeignKey(User)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     unread_flag = models.BooleanField(default=True)
