@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from django.db.models import Q
 from django.urls import reverse
 from django.views.generic import ListView
@@ -15,10 +15,7 @@ class MessagesView(LoginRequiredMixin, ListView):
         """
         Return a list of last messages sent/received for each unique user.
         """
-        return Message.objects.filter(
-            Q(user_sender=self.request.user.id) |
-            Q(user_receiver=self.request.user.id)
-        )
+        return Message.objects.all() # temporary
 
 class NewMessageView(FormView):
     form_class = NewMessageForm
@@ -33,7 +30,11 @@ class NewMessageView(FormView):
         return initial
 
     def form_valid(self, form):
-        form.username = form.cleaned_data['username']
-        form.message = form.cleaned_data['message']
+        username = form.cleaned_data['username']
+        message = form.cleaned_data['message']
+        user = User.objects.get(username=username)
+        if user is None:
+            form.add_error(username, "User does not exist")
+            super(NewMessageView, self).form_invalid(form)
         form.save(self.request.user)
         return super(NewMessageView, self).form_valid(form)
