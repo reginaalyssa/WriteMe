@@ -96,7 +96,7 @@ class ConversationMessagesListView(NewMessageView):
 
         # Update all messages to be read.
 
-        messages_list.update(unread_flag=False)
+        messages_list.exclude(sender=user1).update(unread_flag=False)
         return messages_list
 
     def get_context_data(self, **kwargs):
