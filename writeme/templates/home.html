@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>WriteMe</h1>
-    <p>This will house the homepage of the web app.</p>
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+        <ul>
+            {% for user_item in user_list %}
+                {% if user_item.username != user.username %}
+                    <li>{{ user_item.last_name }}, {{ user_item.first_name }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>WriteMe</h1>
+        <p>This will house the homepage of the web app.</p>
+    {% endif %}
 {% endblock %}
