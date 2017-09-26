@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
-from .models import Message
+from .models import Message, Conversation
 from .forms import NewMessageForm
 
 class MessagesView(LoginRequiredMixin, ListView):
@@ -15,9 +15,19 @@ class MessagesView(LoginRequiredMixin, ListView):
         """
         Return a list of last messages sent/received for each unique user.
         """
-        return Message.objects.all() # temporary
+        # Get list of people the user had a conversation with.
+        conversation_list = Conversation.objects.filter(Q(user1=self.request.user) | Q(user2=self.request.user))
 
-class NewMessageView(FormView):
+        # Retrieve latest messages for each conversation.
+        message_list = []
+        for conversation in conversation_list:
+            message_list.append(Message.objects.filter(conversation=conversation).latest('timestamp'))
+
+        # Sort messages by timestamp, with most recent timestamp first.
+        message_list.sort(key=lambda x: x.timestamp, reverse=True)
+        return message_list
+
+class NewMessageView(LoginRequiredMixin, FormView):
     form_class = NewMessageForm
     template_name = 'messaging/new_message.html'
 

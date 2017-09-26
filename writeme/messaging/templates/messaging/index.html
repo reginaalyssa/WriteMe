@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 
+{% load messaging_tags %}
+
 {% block content %}
     <h1>{{ user.username }}'s Messages</h1>
     <a href="{% url 'messaging:new' %}" class="btn btn-info">New Message</a><br>
 
     {% for item in latest_conversations_list %}
-        {{ item.receiver.first_name }} {{ item.conversation.receiver.last_name }}
-        {{ item.message }}
+        {% if user.username != item.conversation.user1.username %}
+            {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
+        {% else %}
+            {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
+        {% endif %}
+
+        {{ item.message|limit_char_50 }}
         {{ item.timestamp }}
         <br>
     {% endfor %}
