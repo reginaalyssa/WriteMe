@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h1>Conversation with {{ conversation_user.first_name }} {{ conversation_user.last_name }}</h1>
+    {% if messages_list %}
+        {% for message in messages_list %}
+            <p>
+                {{ message.timestamp }}
+                {{ message.message }}
+            </p>
+        {% endfor %}
+    {% else %}
+        <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
+    {% endif %}
 {% endblock %}

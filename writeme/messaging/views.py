@@ -1,15 +1,16 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .models import Message, Conversation
 from .forms import NewMessageForm
 
-class MessagesView(LoginRequiredMixin, ListView):
+class RecentMessagesListView(LoginRequiredMixin, ListView):
     template_name = "messaging/index.html"
-    context_object_name = 'latest_conversations_list'
+    context_object_name = 'latest_conversation_messages_list'
 
     def get_queryset(self):
         """
@@ -19,13 +20,13 @@ class MessagesView(LoginRequiredMixin, ListView):
         conversation_list = Conversation.objects.filter(Q(user1=self.request.user) | Q(user2=self.request.user))
 
         # Retrieve latest messages for each conversation.
-        message_list = []
+        latest_conversation_messages_list = []
         for conversation in conversation_list:
-            message_list.append(Message.objects.filter(conversation=conversation).latest('timestamp'))
+            latest_conversation_messages_list.append(Message.objects.filter(conversation=conversation).latest('timestamp'))
 
         # Sort messages by timestamp, with most recent timestamp first.
-        message_list.sort(key=lambda x: x.timestamp, reverse=True)
-        return message_list
+            latest_conversation_messages_list.sort(key=lambda x: x.timestamp, reverse=True)
+        return latest_conversation_messages_list
 
 class NewMessageView(LoginRequiredMixin, FormView):
     form_class = NewMessageForm
@@ -50,3 +51,33 @@ class NewMessageView(LoginRequiredMixin, FormView):
 
         form.save(self.request.user)
         return super(NewMessageView, self).form_valid(form)
+
+
+class ConversationMessagesListView(ListView):
+    template_name = "messaging/conversation.html"
+    context_object_name = 'messages_list'
+
+    def get_queryset(self):
+        """
+        Return a list of messages in conversation between user1 and user2.
+        """
+        user1 = self.request.user
+        user2 = User.objects.get(username=self.kwargs.get('username'))
+
+        # Get the conversation between user1 and user2.
+        try:
+            conversation = Conversation.objects.get(
+                (Q(user1=user1) & Q(user2=user2)) |
+                (Q(user1=user2) & Q(user2=user1))
+            )
+        except Conversation.DoesNotExist:
+            return None
+
+        # Retrieve all messages for the conversation, with most recent first.
+        messages_list = Message.objects.filter(conversation=conversation).order_by('timestamp')
+        return messages_list
+
+    def get_context_data(self, **kwargs):
+        context = super(ConversationMessagesListView, self).get_context_data(**kwargs)
+        context['conversation_user'] = get_object_or_404(User, username=self.kwargs.get('username'))
+        return context
