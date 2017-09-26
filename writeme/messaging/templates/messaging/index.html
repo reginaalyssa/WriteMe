@@ -7,14 +7,22 @@
     <a href="{% url 'messaging:new' %}" class="btn btn-info">New Message</a><br>
 
     {% for item in latest_conversations_list %}
+        <p>
+        {% if item.unread_flag == True %}
+            <span class="text-bold">
+        {% endif %}
+
         {% if user.username != item.conversation.user1.username %}
             {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
         {% else %}
             {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
         {% endif %}
-
+        {% if item.unread_flag == True %}
+            </span>
+        {% endif %}
         {{ item.message|limit_char_50 }}
         {{ item.timestamp }}
+        </p>
         <br>
     {% endfor %}
 {% endblock %}
