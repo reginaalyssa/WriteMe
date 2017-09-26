@@ -11,13 +11,17 @@
         {% if item.unread_flag == True %}
             <span class="text-bold">
         {% endif %}
+            {% if user.username != item.conversation.user1.username %}
+                <a href="{% url 'messaging:conversation' item.conversation.user1.username %}">
+                    {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
+                </a>
+            {% else %}
+                <a href="{% url 'messaging:conversation' item.conversation.user2.username %}">
+                    {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
+                </a>
+            {% endif %}
 
-        {% if user.username != item.conversation.user1.username %}
-            {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
-        {% else %}
-            {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
-        {% endif %}
-        {% if item.unread_flag == True %}
+            {% if item.unread_flag == True %}
             </span>
         {% endif %}
         {{ item.message|limit_char_50 }}
