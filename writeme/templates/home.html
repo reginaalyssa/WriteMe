@@ -6,7 +6,7 @@
         <ul>
             {% for user_item in user_list %}
                 {% if user_item.username != user.username %}
-                    <li>{{ user_item.last_name }}, {{ user_item.first_name }}</li>
+                    <li><a href="{% url 'messaging:new' user_item.username %}">{{ user_item.last_name }}, {{ user_item.first_name }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
