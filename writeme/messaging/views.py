@@ -30,11 +30,13 @@ class NewMessageView(FormView):
         return initial
 
     def form_valid(self, form):
-        username = form.cleaned_data['username']
-        message = form.cleaned_data['message']
-        user = User.objects.get(username=username)
-        if user is None:
-            form.add_error(username, "User does not exist")
-            super(NewMessageView, self).form_invalid(form)
+        form.username = form.cleaned_data['username']
+        form.message = form.cleaned_data['message']
+        try:
+            user = User.objects.get(username=form.username)
+        except:
+            form.add_error('username', "User does not exist")
+            return super(NewMessageView, self).form_invalid(form)
+
         form.save(self.request.user)
         return super(NewMessageView, self).form_valid(form)
