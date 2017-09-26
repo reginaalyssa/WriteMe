@@ -19,6 +19,7 @@ from django.contrib import admin
 from .views import HomeView
 
 urlpatterns = [
+    url(r'^messages/', include('messaging.urls')),
     url(r'^user/', include('users.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home')
