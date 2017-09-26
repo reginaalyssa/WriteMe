@@ -56,6 +56,20 @@ class NewMessageView(LoginRequiredMixin, FormView):
 class ConversationMessagesListView(NewMessageView):
     template_name = "messaging/conversation.html"
     form_class = NewMessageHiddenUserForm
+    #
+    # def get(self, request, username):
+    #     get = super(ConversationMessagesListView, self).get(request)
+    #     user1 = self.request.user
+    #     user2 = User.objects.get(username=self.kwargs.get('username'))
+    #
+    #     try:
+    #         conversation = Conversation.objects.get(
+    #             (Q(user1=user1) & Q(user2=user2)) |
+    #             (Q(user1=user2) & Q(user2=user1))
+    #         )
+    #     except Conversation.DoesNotExist:
+    #         pass
+    #     return get
 
     def get_success_url(self):
         return reverse('messaging:conversation', args=(self.kwargs.get('username'),))
@@ -79,6 +93,10 @@ class ConversationMessagesListView(NewMessageView):
 
         # Retrieve all messages for the conversation, with most recent first.
         messages_list = Message.objects.filter(conversation=conversation).order_by('timestamp')
+
+        # Update all messages to be read.
+
+        messages_list.update(unread_flag=False)
         return messages_list
 
     def get_context_data(self, **kwargs):
