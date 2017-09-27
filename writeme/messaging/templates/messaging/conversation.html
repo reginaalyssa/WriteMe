@@ -1,25 +1,68 @@
 {% extends "base.html" %}
 
+{% block title %}Messages - View Conversation{% endblock %}
+
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'messaging/css/messaging.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <small class="text-muted">
-            <a href="{% url 'home' %}">WriteMe</a> > <span class="text-bold">Home</span>
+            <a href="{% url 'home' %}">WriteMe</a> >
+            <a href="{% url 'messaging:messages' %}">Messages</a> >
+            <span class="text-bold">Conversation with {{ conversation_user.first_name }} {{ conversation_user.last_name }} ({{ conversation_user.username }})</span>
         </small>
         <div class="main-container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <h1 class="margin-0 main-header">Conversation with {{ conversation_user.first_name }} {{ conversation_user.last_name }}</h1>
-                    {% if messages_list %}
-                        {% for message in messages_list %}
-                            <p>
-                                {{ message.sender }}
-                                {{ message.timestamp }}
-                                {{ message.message }}
-                            </p>
-                        {% endfor %}
-                    {% else %}
-                        <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
-                    {% endif %}
+                    <div class="container" id="conversation-messages-container">
+                        <div class="row">
+                                {% if messages_list %}
+                                    {% for message in messages_list %}
+                                        <div class="col-md-12 conversation-message-entry mx-auto">
+                                            <p>
+                                                <span class="text-bold">
+                                                    {{ message.sender.first_name }} {{ message.sender.last_name }} ({{ message.sender.username }})
+                                                </span>
+
+                                                <small class="text-muted float-right">
+                                                    {{ message.timestamp }}
+                                                </small>
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-lg-2 col-3 btn-circle-container">
+                                                    <div class="btn btn-md btn-circle margin-0">{{ message.sender.first_name|make_list|first }}</div>
+                                                </div>
+                                                <div class="col-lg-10 col-9 conversation-message-content">
+                                                    <p>{{ message.message }}</p>
+                                                </div>
+                                            </div>
+{#                                                <p>#}
+{#                                                    <span class="text-bold">#}
+{#                                                        {{ message.sender.first_name }} {{ message.sender.last_name }} ({{ message.sender.username }})#}
+{#                                                    </span>#}
+{##}
+{#                                                    <small class="text-muted float-right">#}
+{#                                                        {{ message.timestamp }}#}
+{#                                                    </small>#}
+{#                                                </p>#}
+{##}
+{#                                                <p>#}
+{#                                                    <span class="btn btn-md btn-circle">{{ message.sender.first_name|make_list|first }}</span>#}
+{#                                                    {{ message.message }}#}
+{#                                                </p>#}
+                                            <hr>
+                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -35,3 +78,6 @@
         </div>
     </div>
 {% endblock %}
+
+
+{% block scripts %}<script src="{% static 'messaging/js/scroll-bottom.js' %}"></script>{% endblock %}
