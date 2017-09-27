@@ -28,22 +28,26 @@
     float: right;
 }
 
+.btn-sender {
+    background-color: #448ccb;
+}
+
+.btn-circle {
+    margin-right: 0;
+}
+
 #conversation-messages-container {
     background-color: #fcfcfc;
+    border: 1px solid rgba(0,0,0,.1);
     padding: 30px;
-    border-radius: 10px;
-    margin-top: 30px;
+    border-radius: .25rem;
     float:left;
     overflow-y: auto;
-    height: 400px;
+    height: 350px;
 }
 
-.btn-circle-container {
-    padding-right: 0;
-}
-
-.conversation-message-content {
-    padding-left: 0;
+#conversation-send-message-container, #conversation-messages-container {
+    margin-top: 30px;
 }
 
 @media(max-width: 767px) {
