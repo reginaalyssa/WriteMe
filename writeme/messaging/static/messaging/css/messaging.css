@@ -4,5 +4,28 @@
 }
 
 .unread {
-    background-color: #e6e6e6;
+    background-color: #f6f6f6;
+}
+
+.latest-conversation-entry:hover {
+    text-decoration: none;
+}
+
+.latest-conversation-entry:hover .row {
+    background-color: #eeeeee;
+    transition: all 0.25s ease-in-out;
+}
+
+.latest-conversation-message {
+    color: #353535;
+}
+
+#new-message-button {
+    float: right;
+}
+
+@media(max-width: 767px) {
+    #new-message-button {
+        float: left;
+    }
 }

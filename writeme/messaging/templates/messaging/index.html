@@ -21,7 +21,7 @@
                             <p>View all of your messages here. Click on a user to read your conversations.</p>
                         </div>
                         <div class="col-md-4 ml-auto">
-                            <a href="{% url 'messaging:new' %}" class="btn btn-md blue-button">New Message</a><br>
+                            <a href="{% url 'messaging:new' %}" class="btn btn-md blue-button" id="new-message-button">New Message</a><br>
                         </div>
                     </div>
                     <div class="row">
@@ -29,36 +29,38 @@
                             {% if latest_conversation_messages_list %}
                                 <hr class="margin-0">
                                 {% for item in latest_conversation_messages_list %}
-                                    <div class="row message-entry {% if item.unread_flag == True and item.sender != user %}unread{% endif %}">
-                                        <div class="col-md-3">
-                                            <p class="margin-0">
-                                                {% if item.unread_flag == True and item.sender != user %}
-                                                    <span class="text-bold">
-                                                {% endif %}
+                                    {% if user.username != item.conversation.user1.username %}
+                                        <a href="{% url 'messaging:conversation' item.conversation.user1.username %}" class="latest-conversation-entry">
+                                    {% else %}
+                                        <a href="{% url 'messaging:conversation' item.conversation.user2.username %}" class="latest-conversation-entry">
+                                    {% endif %}
+                                            <div class="row message-entry {% if item.unread_flag == True and item.sender != user %}unread{% endif %}">
+                                                <div class="col-md-3">
+                                                    <h5 class="margin-0">
+                                                        {% if item.unread_flag == True and item.sender != user %}
+                                                            <span class="text-bold">
+                                                        {% endif %}
 
-                                                {% if user.username != item.conversation.user1.username %}
-                                                    <a href="{% url 'messaging:conversation' item.conversation.user1.username %}">
-                                                        {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
-                                                    </a>
-                                                {% else %}
-                                                    <a href="{% url 'messaging:conversation' item.conversation.user2.username %}">
-                                                        {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
-                                                    </a>
-                                                {% endif %}
+                                                        {% if user.username != item.conversation.user1.username %}
+                                                            {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
+                                                        {% else %}
+                                                            {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
+                                                        {% endif %}
 
-                                                {% if item.unread_flag == True %}
-                                                    </span>
-                                                {% endif %}
-                                            </p>
-                                        </div>
+                                                        {% if item.unread_flag == True %}
+                                                            </span>
+                                                        {% endif %}
+                                                    </h5>
+                                                </div>
 
-                                        <div class="col-md-6">
-                                            <p class="margin-0">{{ item.message|limit_char_50 }}</p>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <small class="text-muted">{{ item.timestamp }}</small>
-                                        </div>
-                                    </div>
+                                                <div class="col-md-6">
+                                                    <p class="margin-0 latest-conversation-message">{{ item.message|limit_char_50 }}</p>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <small class="text-muted">{{ item.timestamp }}</small>
+                                                </div>
+                                            </div>
+                                        </a>
                                     <hr class="margin-0">
                                 {% endfor %}
                             {% else %}
