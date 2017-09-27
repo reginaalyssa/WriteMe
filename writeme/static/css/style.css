@@ -35,7 +35,7 @@ body {
 }
 
 .main-container {
-    padding: 40px 0;
+    padding: 40px 15px;
 }
 
 .help-block {
@@ -57,6 +57,11 @@ body {
 .blue-button:hover {
     background-color: #2f72aa;
     color: #ffffff;
+}
+
+.radio {
+    display: inline;
+    margin-right: 20px;
 }
 
 /* Navbar Styles */

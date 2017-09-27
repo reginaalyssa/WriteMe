@@ -11,21 +11,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/writeme/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="85">
+              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="111" column="1" lean-forward="false" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+            <state relative-caret-position="227">
+              <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -68,6 +78,8 @@
       <find>templates</find>
       <find>APPEND</find>
       <find>static</find>
+      <find>main-container</find>
+      <find>main-con</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,7 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/writeme/users/templates/users/signup.html" />
         <option value="$PROJECT_DIR$/writeme/users/models.py" />
         <option value="$PROJECT_DIR$/writeme/users/urls.py" />
         <option value="$PROJECT_DIR$/writeme/users/forms.py" />
@@ -93,9 +104,10 @@
         <option value="$PROJECT_DIR$/writeme/messaging/templates/messaging/index.html" />
         <option value="$PROJECT_DIR$/writeme/templates/home.html" />
         <option value="$PROJECT_DIR$/writeme/writeme/settings.py" />
-        <option value="$PROJECT_DIR$/writeme/users/templates/users/login.html" />
-        <option value="$PROJECT_DIR$/writeme/static/css/style.css" />
         <option value="$PROJECT_DIR$/writeme/templates/base.html" />
+        <option value="$PROJECT_DIR$/writeme/users/templates/users/login.html" />
+        <option value="$PROJECT_DIR$/writeme/users/templates/users/signup.html" />
+        <option value="$PROJECT_DIR$/writeme/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -106,8 +118,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="429" />
-    <option name="y" value="63" />
+    <option name="x" value="420" />
+    <option name="y" value="4" />
     <option name="width" value="907" />
     <option name="height" value="735" />
   </component>
@@ -251,7 +263,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="429" y="63" width="907" height="735" extended-state="0" />
+    <frame x="420" y="4" width="907" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2738496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -501,14 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/writeme/users/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -626,6 +630,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/writeme/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -634,18 +646,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="111" column="1" lean-forward="false" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="227">
+          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
           <folding />
         </state>
       </provider>
