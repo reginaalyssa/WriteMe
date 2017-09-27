@@ -28,3 +28,8 @@
     color: #1f5e93;
     transition: all 0.25s ease-in-out;
 }
+
+.site-title {
+    font-family: "Pacifico", sans-serif;
+    font-size: 50px;
+}

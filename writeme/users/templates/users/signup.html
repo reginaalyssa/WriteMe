@@ -4,7 +4,22 @@
 
 {% block stylesheet %}
     {% load static %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#id_birthdate").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeYear: true,
+                yearRange: "1900:2017"
+            });
+        });
+    </script>
 {% endblock %}
 
 {% block content %}

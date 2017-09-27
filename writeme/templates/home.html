@@ -46,7 +46,20 @@
             </div>
         </div>
     {% else %}
-        <h1>WriteMe</h1>
-        <p>This will house the homepage of the web app.</p>
+        <main class="row align-items-center full-height">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mx-auto text-center">
+                        <h1 class="site-title">WriteMe</h1>
+                        <p>
+                            An user-to-user messaging application developed in Django.
+                        </p>
+
+                        <a href="{% url 'login' %}" class="btn btn-md">Log in</a>
+                        <a href="{% url 'signup' %}" class="btn btn-md">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </main>
     {% endif %}
 {% endblock %}
