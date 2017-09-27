@@ -9,4 +9,4 @@ class HomeView(ListView):
         """
         Return all registered users' First Name and Last Name.
         """
-        return User.objects.all()
+        return User.objects.all().exclude(is_superuser=True)

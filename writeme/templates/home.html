@@ -2,16 +2,38 @@
 
 {% block title %}Home{% endblock %}
 
+{% block navbar %}
+    {% if user.is_authenticated %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     {% if user.is_authenticated %}
-        <h1>Welcome, {{ user.username }}!</h1>
-        <ul>
-            {% for user_item in user_list %}
-                {% if user_item.username != user.username %}
-                    <li><a href="{% url 'messaging:new' user_item.username %}">{{ user_item.last_name }}, {{ user_item.first_name }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+        <div class="container">
+            <small class="text-muted">
+                <a href="{% url 'home' %}">WriteMe</a> > <span class="text-bold">Home</span>
+            </small>
+            <div class="main-container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="main-header">
+                            <h1 class="margin-0">Welcome to WriteMe, {{ user.username }}!</h1>
+                        </div>
+                        <p>
+                            Start sending messages to other users of the site by clicking on their names below.
+                        </p>
+                        <ul>
+                            {% for user_item in user_list %}
+                                {% if user_item.username != user.username %}
+                                    <li><a href="{% url 'messaging:new' user_item.username %}">{{ user_item.first_name }} {{ user_item.last_name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% else %}
         <h1>WriteMe</h1>
         <p>This will house the homepage of the web app.</p>
