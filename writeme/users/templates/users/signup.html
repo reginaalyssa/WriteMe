@@ -2,6 +2,11 @@
 
 {% block title %}Sign up{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container main-container">
         <div class="row">

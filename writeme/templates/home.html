@@ -2,6 +2,11 @@
 
 {% block title %}Home{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block navbar %}
     {% if user.is_authenticated %}
         {{ block.super }}
@@ -17,9 +22,7 @@
             <div class="main-container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <div class="main-header">
-                            <h1 class="margin-0">Welcome to WriteMe, {{ user.username }}!</h1>
-                        </div>
+                        <h1 class="margin-0 main-header">Welcome to WriteMe, {{ user.username }}!</h1>
                         <p>
                             Start sending messages to other users of the site by clicking on their names below.
                         </p>
