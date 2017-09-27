@@ -1,3 +1,56 @@
+@font-face {
+    font-family: "Pacifico";
+    src: url("../fonts/Pacifico.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+html {
+    height: 100%;
+    min-height: 410px;
+    min-width: 320px;
+}
+
+body {
+    height: 100%;
+    font-family: "OpenSans-Regular", sans-serif;
+    color: #353535;
+}
+
 .text-bold {
     font-weight: bold;
+}
+
+#main-navbar .navbar-brand {
+    font-family: "Pacifico", sans-serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    /*padding: 0;*/
+}
+
+.navbar-custom {
+    background-color: #448ccb;
+    background: -webkit-linear-gradient(left, #448ccb, #3cdcb1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #448ccb, #3cdcb1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #448ccb, #3cdcb1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #448ccb, #3cdcb1); /* Standard syntax */
+}
+
+.navbar-custom .nav-item .nav-link {
+    color: #ffffff;
+    font-family: "OpenSans-Bold", sans-serif;
+    padding-left: 30px;
+}
+
+.navbar-custom .nav-item .nav-link:hover {
+    color: #edee8d;
+    transition: all 0.25s ease-in-out;
 }
