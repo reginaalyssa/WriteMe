@@ -23,10 +23,18 @@
                         <p>
                             Start sending messages to other users of the site by clicking on their names below.
                         </p>
-                        <ul>
+                        <ul class="user-list">
                             {% for user_item in user_list %}
                                 {% if user_item.username != user.username %}
-                                    <li><a href="{% url 'messaging:new' user_item.username %}">{{ user_item.first_name }} {{ user_item.last_name }}</a></li>
+                                    <li>
+                                        <a href="{% url 'messaging:new' user_item.username %}">
+                                            <p>
+                                                <span class="btn btn-md btn-circle">{{ user_item.first_name|make_list|first }}</span>
+                                                {{ user_item.first_name }} {{ user_item.last_name }}
+                                            </p>
+                                        </a>
+                                        <hr>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>

@@ -59,6 +59,50 @@ body {
     color: #ffffff;
 }
 
+.btn-circle {
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	padding: auto;
+    margin-right: 40px;
+	font-size: 40px;
+	border-radius: 35px;
+    background-color: #3cdcb1;
+    color: #ffffff;
+    font-family: "OpenSans-Bold", sans-serif;
+}
+
+.user-list li a:hover .btn-circle {
+    background-color: #1f5e93;
+    transition: all 0.25s ease-in-out;
+}
+
+.user-list {
+    list-style: none;
+    margin: 50px 0;
+    padding: 0;
+}
+
+.user-list li {
+    margin: 15px 0;
+}
+
+.user-list li a:hover {
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.user-list li a p {
+    font-size: 30px;
+    font-family: "OpenSans-Bold", sans-serif;
+    color: #448dcb;
+}
+
+.user-list li a:hover p {
+    color: #1f5e93;
+    transition: all 0.25s ease-in-out;
+}
+
 .radio {
     display: inline;
     margin-right: 20px;
@@ -75,10 +119,10 @@ body {
 
 .navbar-custom {
     background-color: #448ccb;
-    background: -webkit-linear-gradient(left, #448ccb, #3cdcb1); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #448ccb, #3cdcb1); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #448ccb, #3cdcb1); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #448ccb, #3cdcb1); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #448ccb, #3cdcb1);
+    background: -o-linear-gradient(right, #448ccb, #3cdcb1);
+    background: -moz-linear-gradient(right, #448ccb, #3cdcb1);
+    background: linear-gradient(to right, #448ccb, #3cdcb1);
 }
 
 .navbar-custom .nav-item .nav-link {
