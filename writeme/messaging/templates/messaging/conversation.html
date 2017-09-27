@@ -21,8 +21,12 @@
                     <div class="container" id="conversation-messages-container">
                         <div class="row">
                             {% if messages_list %}
+                                <div class="col-md-12 mx-auto text-center">
+                                    <small>You have reached the beginning of your conversation.</small>
+                                </div>
                                 {% for message in messages_list %}
                                     <div class="col-md-12 conversation-message-entry mx-auto">
+                                        <hr>
                                         <div class="row">
                                             {% if message.sender == user %}
                                                         <div class="col-lg-10 col-9 text-right">
@@ -52,7 +56,6 @@
                                                 </div>
                                             {% endif %}
                                         </div>
-                                        <hr>
                                     </div>
                                 {% endfor %}
                             {% else %}
