@@ -33,6 +33,10 @@ body {
     padding: 0;
 }
 
+.margin-0 {
+    margin: 0;
+}
+
 .main-header {
     font-family: "OpenSans-Bold", sans-serif;
     margin-bottom: 1rem;
@@ -45,6 +49,8 @@ body {
 .help-block {
     color: red;
 }
+
+/* Button Styles */
 
 .blue-button {
     font-family: "OpenSans-Bold", sans-serif;

@@ -2,6 +2,11 @@
 
 {% load messaging_tags %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'messaging/css/messaging.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <small class="text-muted">
@@ -21,29 +26,44 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            {% for item in latest_conversation_messages_list %}
-                                <p>
-                                {% if item.unread_flag == True and item.sender != user %}
-                                    <span class="text-bold">
-                                {% endif %}
-                                    {% if user.username != item.conversation.user1.username %}
-                                        <a href="{% url 'messaging:conversation' item.conversation.user1.username %}">
-                                            {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'messaging:conversation' item.conversation.user2.username %}">
-                                            {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
-                                        </a>
-                                    {% endif %}
+                            {% if latest_conversation_messages_list %}
+                                <hr class="margin-0">
+                                {% for item in latest_conversation_messages_list %}
+                                    <div class="row message-entry {% if item.unread_flag == True and item.sender != user %}unread{% endif %}">
+                                        <div class="col-md-3">
+                                            <p class="margin-0">
+                                                {% if item.unread_flag == True and item.sender != user %}
+                                                    <span class="text-bold">
+                                                {% endif %}
 
-                                    {% if item.unread_flag == True %}
-                                    </span>
-                                {% endif %}
-                                {{ item.message|limit_char_50 }}
-                                {{ item.timestamp }}
-                                </p>
-                                <br>
-                            {% endfor %}
+                                                {% if user.username != item.conversation.user1.username %}
+                                                    <a href="{% url 'messaging:conversation' item.conversation.user1.username %}">
+                                                        {{ item.conversation.user1.first_name }} {{ item.conversation.user1.last_name }}
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{% url 'messaging:conversation' item.conversation.user2.username %}">
+                                                        {{ item.conversation.user2.first_name }} {{ item.conversation.user2.last_name }}
+                                                    </a>
+                                                {% endif %}
+
+                                                {% if item.unread_flag == True %}
+                                                    </span>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <p class="margin-0">{{ item.message|limit_char_50 }}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small class="text-muted">{{ item.timestamp }}</small>
+                                        </div>
+                                    </div>
+                                    <hr class="margin-0">
+                                {% endfor %}
+                            {% else %}
+                                <p>You currently haven't sent or received a message yet. <a href="{% url 'messaging:new' %}">Send new message now.</a></p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

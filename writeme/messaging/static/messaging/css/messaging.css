@@ -1,0 +1,8 @@
+.message-entry {
+    padding: 20px;
+    margin: 0;
+}
+
+.unread {
+    background-color: #e6e6e6;
+}
