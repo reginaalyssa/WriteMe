@@ -29,11 +29,43 @@ body {
     font-weight: bold;
 }
 
+.main-header {
+    font-family: "OpenSans-Bold", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.main-container {
+    padding: 40px 0;
+}
+
+.help-block {
+    color: red;
+}
+
+.blue-button {
+    font-family: "OpenSans-Bold", sans-serif;
+    padding: .75rem 1.75rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blue-button {
+    background-color: #448dcb;
+    color: #ffffff;
+}
+
+.blue-button:hover {
+    background-color: #2f72aa;
+    color: #ffffff;
+}
+
+/* Navbar Styles */
+
 #main-navbar .navbar-brand {
     font-family: "Pacifico", sans-serif;
     font-size: 2.5rem;
     color: #ffffff;
-    /*padding: 0;*/
+    padding: 0;
 }
 
 .navbar-custom {
@@ -53,4 +85,28 @@ body {
 .navbar-custom .nav-item .nav-link:hover {
     color: #edee8d;
     transition: all 0.25s ease-in-out;
+}
+
+.navbar-toggle:hover .icon-bar {
+    background-color: #4d4d4d;
+}
+
+/* django-crispy-forms remove asterisk for required field */
+
+.asteriskField {
+    display: none;
+}
+
+.navbar-toggle
+{
+    position:relative;
+    float:right;
+    padding:9px 10px;
+    margin-top:8px;
+    margin-right:15px;
+    margin-bottom:8px;
+    background-color:transparent;
+    background-image:none;
+    border:1px solid #444;          /* added line */
+    border-radius:4px
 }

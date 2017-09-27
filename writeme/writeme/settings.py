@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'messaging.apps.MessagingConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -122,9 +123,14 @@ USE_TZ = True
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
 STATIC_URL = '/static/'
 
+# Login and login redirect URLs
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
+
 APPEND_SLASH = True
+
+# Setup django-crispy-forms to use bootstrap4
+# https://django-crispy-forms.readthedocs.io/en/latest/install.html#installing-django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
