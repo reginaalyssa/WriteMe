@@ -1,10 +1,27 @@
 {% extends "base.html" %}
 
+{% block title %}New Message{% endblock %}
+
 {% block content %}
-    <h1>New Message</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Send Message" /><br />
-    </form>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">WriteMe</a> >
+            <a href="{% url 'messaging:messages' %}">Messaging</a> >
+            <span class="text-bold">New Message</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="main-header text-center">New Message</h1>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ form|crispy }}
+                        <input type="submit" value="Send Message" class="btn btn-md form-control blue-button"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

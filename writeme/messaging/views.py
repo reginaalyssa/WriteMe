@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .models import Message, Conversation
-from .forms import NewMessageForm, NewMessageHiddenUserForm
+from .forms import NewMessageDisabledUserForm, NewMessageForm, NewMessageHiddenUserForm
 
 class RecentMessagesListView(LoginRequiredMixin, ListView):
     template_name = "messaging/index.html"
@@ -52,24 +52,12 @@ class NewMessageView(LoginRequiredMixin, FormView):
         form.save(self.request.user)
         return super(NewMessageView, self).form_valid(form)
 
+class NewMessageDisabledUserView(NewMessageView):
+    form_class = NewMessageDisabledUserForm
 
 class ConversationMessagesListView(NewMessageView):
     template_name = "messaging/conversation.html"
     form_class = NewMessageHiddenUserForm
-    #
-    # def get(self, request, username):
-    #     get = super(ConversationMessagesListView, self).get(request)
-    #     user1 = self.request.user
-    #     user2 = User.objects.get(username=self.kwargs.get('username'))
-    #
-    #     try:
-    #         conversation = Conversation.objects.get(
-    #             (Q(user1=user1) & Q(user2=user2)) |
-    #             (Q(user1=user2) & Q(user2=user1))
-    #         )
-    #     except Conversation.DoesNotExist:
-    #         pass
-    #     return get
 
     def get_success_url(self):
         return reverse('messaging:conversation', args=(self.kwargs.get('username'),))

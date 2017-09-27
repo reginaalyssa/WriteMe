@@ -41,3 +41,8 @@ class NewMessageForm(forms.Form):
 
 class NewMessageHiddenUserForm(NewMessageForm):
     username = forms.CharField(widget=forms.HiddenInput())
+
+class NewMessageDisabledUserForm(NewMessageForm):
+    username = forms.CharField(max_length=150)
+    username.disabled = True
+
