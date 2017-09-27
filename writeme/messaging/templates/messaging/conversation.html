@@ -1,21 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Conversation with {{ conversation_user.first_name }} {{ conversation_user.last_name }}</h1>
-    {% if messages_list %}
-        {% for message in messages_list %}
-            <p>
-                {{ message.sender }}
-                {{ message.timestamp }}
-                {{ message.message }}
-            </p>
-        {% endfor %}
-    {% else %}
-        <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
-    {% endif %}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Send Message" /><br />
-    </form>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">WriteMe</a> > <span class="text-bold">Home</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1 class="margin-0 main-header">Conversation with {{ conversation_user.first_name }} {{ conversation_user.last_name }}</h1>
+                    {% if messages_list %}
+                        {% for message in messages_list %}
+                            <p>
+                                {{ message.sender }}
+                                {{ message.timestamp }}
+                                {{ message.message }}
+                            </p>
+                        {% endfor %}
+                    {% else %}
+                        <p>You haven't made a conversation with {{ conversation_user.first_name }} yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-md form-control blue-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

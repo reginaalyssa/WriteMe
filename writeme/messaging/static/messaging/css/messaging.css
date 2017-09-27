@@ -7,6 +7,10 @@
     background-color: #f6f6f6;
 }
 
+.latest-conversations {
+    margin-top: 20px;
+}
+
 .latest-conversation-entry:hover {
     text-decoration: none;
 }

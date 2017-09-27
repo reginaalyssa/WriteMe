@@ -2,6 +2,8 @@
 
 {% load messaging_tags %}
 
+{% block title %}Messages - View Messages{% endblock %}
+
 {% block stylesheet %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'messaging/css/messaging.css' %}">
@@ -24,7 +26,7 @@
                             <a href="{% url 'messaging:new' %}" class="btn btn-md blue-button" id="new-message-button">New Message</a><br>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row latest-conversations">
                         <div class="col-md-12">
                             {% if latest_conversation_messages_list %}
                                 <hr class="margin-0">
