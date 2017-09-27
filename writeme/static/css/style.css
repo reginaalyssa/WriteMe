@@ -56,16 +56,26 @@ textarea {
 
 /* Button Styles */
 
-.blue-button {
+.blue-button, .white-button {
     font-family: "OpenSans-Bold", sans-serif;
     padding: .75rem 1.75rem;
     border-radius: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 0 0.25rem 1rem 0.25rem;
 }
 
 .blue-button {
     background-color: #448dcb;
     color: #ffffff;
+}
+
+.white-button {
+    background-color: #ffffff;
+    color: #3cd8b2;
+}
+
+.white-button:hover {
+    background-color: #eeeeee;
+    color: #1fab89;
 }
 
 .blue-button:hover {

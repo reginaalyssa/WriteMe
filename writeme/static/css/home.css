@@ -31,5 +31,18 @@
 
 .site-title {
     font-family: "Pacifico", sans-serif;
-    font-size: 50px;
+    font-size: 80px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+main {
+    color: #ffffff;
+    background-color: #448ccb;
+    background: -webkit-linear-gradient(bottom left, #448ccb, #07ffc3);
+    background: -o-linear-gradient(top right, #448ccb, #07ffc3);
+    background: -moz-linear-gradient(top right, #448ccb, #07ffc3);
+    background: linear-gradient(to top right, #448ccb, #07ffc3);
 }

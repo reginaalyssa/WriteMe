@@ -24,7 +24,7 @@
       <file leaf-file-name="conversation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/writeme/messaging/templates/messaging/conversation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="408">
               <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
               <folding />
             </state>
@@ -43,21 +43,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/writeme/static/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="243">
+              <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/writeme/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="51" column="58" lean-forward="false" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state relative-caret-position="379">
+              <caret line="57" column="96" lean-forward="false" selection-start-line="57" selection-start-column="96" selection-end-line="57" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="7" column="70" lean-forward="true" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writeme/writeme/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="128" column="18" lean-forward="true" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -75,6 +105,7 @@
       <find>ease</find>
       <find>margin-0</find>
       <find>transi</find>
+      <find>navbar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -89,7 +120,6 @@
         <option value="$PROJECT_DIR$/writeme/writeme/urls.py" />
         <option value="$PROJECT_DIR$/writeme/messaging/templatetags/messaging_tags.py" />
         <option value="$PROJECT_DIR$/writeme/messaging/models.py" />
-        <option value="$PROJECT_DIR$/writeme/writeme/settings.py" />
         <option value="$PROJECT_DIR$/writeme/users/templates/users/login.html" />
         <option value="$PROJECT_DIR$/writeme/writeme/views.py" />
         <option value="$PROJECT_DIR$/writeme/messaging/views.py" />
@@ -97,7 +127,6 @@
         <option value="$PROJECT_DIR$/writeme/users/static/users/css/signup.css" />
         <option value="$PROJECT_DIR$/writeme/messaging/templates/messaging/new_message.html" />
         <option value="$PROJECT_DIR$/writeme/messaging/templates/messaging/index.html" />
-        <option value="$PROJECT_DIR$/writeme/static/css/style.css" />
         <option value="$PROJECT_DIR$/writeme/messaging/static/messaging/js/scroll-bottom.js" />
         <option value="$PROJECT_DIR$/writeme/messaging/forms.py" />
         <option value="$PROJECT_DIR$/writeme/messaging/static/messaging/css/messaging.css" />
@@ -105,9 +134,11 @@
         <option value="$PROJECT_DIR$/writeme/users/forms.py" />
         <option value="$PROJECT_DIR$/writeme/templates/base.html" />
         <option value="$PROJECT_DIR$/writeme/users/static/users/css/jquery-bootstrap-datepicker.css" />
+        <option value="$PROJECT_DIR$/writeme/writeme/settings.py" />
         <option value="$PROJECT_DIR$/writeme/users/templates/users/signup.html" />
-        <option value="$PROJECT_DIR$/writeme/static/css/home.css" />
         <option value="$PROJECT_DIR$/writeme/templates/home.html" />
+        <option value="$PROJECT_DIR$/writeme/static/css/style.css" />
+        <option value="$PROJECT_DIR$/writeme/static/css/home.css" />
       </list>
     </option>
   </component>
@@ -593,14 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/writeme/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="135" column="35" lean-forward="true" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -661,14 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="100" column="49" lean-forward="false" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/writeme/messaging/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -681,22 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/messaging/templates/messaging/conversation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/messaging/static/messaging/css/messaging.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -717,10 +716,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/writeme/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="128" column="18" lean-forward="true" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/writeme/users/templates/users/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        <state relative-caret-position="34">
+          <caret line="7" column="70" lean-forward="true" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/messaging/static/messaging/css/messaging.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/messaging/templates/messaging/conversation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writeme/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="57" column="96" lean-forward="false" selection-start-line="57" selection-start-column="96" selection-end-line="57" selection-end-column="96" />
           <folding />
         </state>
       </provider>
@@ -737,16 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/writeme/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/writeme/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="51" column="58" lean-forward="false" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="243">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding />
         </state>
       </provider>

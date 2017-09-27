@@ -126,7 +126,7 @@ STATICFILES_DIRS = (
 STATIC_URL = '/static/'
 
 # Login and login redirect URLs
-LOGIN_URL = '/login/'
+LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = '/'
 
 APPEND_SLASH = True
